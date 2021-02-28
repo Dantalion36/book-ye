@@ -16,7 +16,7 @@
                 <p class="availability">is available</p>
                 <p class="price">000 grn</p>
                 <button class="buy">buy</button>
-                <a href="#">Add to wishlist</a>
+                <a [routerLink]="[ '/path' ]">Add to wishlist</a>
             </div>
             <div class="pricing__footer">
                 <div class="delivery"></div>
@@ -30,11 +30,11 @@
             <div class="info__params">
                 <div>
                     <span>Author:</span>
-                    <a href="#"></a>
+                    <a [routerLink]="[ '/path' ]"></a>
                 </div>
                 <div>
                     <span>Publisher:</span>
-                    <a href="#"></a>
+                    <a [routerLink]="[ '/path' ]"></a>
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@
             <img src="assets/images/author-details-img.jpg" alt="book image">
             <div>
                 <p id="author-name">Name</p>
-                <a href="#">Other books by this author</a>
+                <button>Other books by this author</button>
             </div>
         </div>
         <div class="detailed-info__content" id="comments">

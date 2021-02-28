@@ -7,19 +7,19 @@
             <span></span>
             <span></span>
             <ul id="menu">
-                <a href="#">
+                <a [routerLink]="[ '/home' ]">
                     <li>Home</li>
                 </a>
-                <a href="#">
+                <a [routerLink]="[ '/contacts' ]">
                     <li>Contacts</li>
                 </a>
-                <a href="#">
+                <a [routerLink]="[ '/about' ]">
                     <li>About</li>
                 </a>
-                <a href="#">
+                <a [routerLink]="[ '/blog' ]">
                     <li>Blog</li>
                 </a>
-                <a href="#">
+                <a [routerLink]="[ '/distribution' ]">
                     <li>Distribution</li>
                 </a>
             </ul>
@@ -27,11 +27,11 @@
     </nav>
     <div class="container">
         <nav class="navigation">
-            <a class="nav__link" href="#">Home</a>
-            <a class="nav__link" href="#">Contacts</a>
-            <a class="nav__link" href="#">About</a>
-            <a class="nav__link" href="#">Blog</a>
-            <a class="nav__link" href="#">Distribution</a>
+            <a class="nav__link" [routerLink]="[ '/home' ]">Home</a>
+            <a class="nav__link" [routerLink]="[ '/contacts' ]">Contacts</a>
+            <a class="nav__link" [routerLink]="[ '/about' ]">About</a>
+            <a class="nav__link" [routerLink]="[ '/blog' ]">Blog</a>
+            <a class="nav__link" [routerLink]="[ '/distribution' ]">Distribution</a>
         </nav>
     </div>
 </div>
@@ -46,17 +46,17 @@
                 </button>
             </form>
             <div class="search-bar__links">
-                <a href="#" class="search-bar__link mobile-search">
+                <a [routerLink]="[ '/path' ]" class="search-bar__link mobile-search">
                     <img src="assets/images/search_icon.jpg" alt="Search">
                     <form class="popup-search" action="">
                         <input class="search-bar__input" type="text">
                         <button class="search-btn"></button>
                     </form>
                 </a>
-                <a href="#" class="search-bar__link"><img src="assets/images/cart_icon.svg" alt="Cart"><span
+                <a [routerLink]="[ '/cart' ]" class="search-bar__link"><img src="assets/images/cart_icon.svg" alt="Cart"><span
                         class="basket-count"></span></a>
-                <a href="#" class="search-bar__link"><img src="assets/images/heart_icon.svg" alt="Wishlist"></a>
-                <a href="#"><span class="search-bar__link"><img src="assets/images/person_icon.svg"
+                <a [routerLink]="[ '/wishlist' ]" class="search-bar__link"><img src="assets/images/heart_icon.svg" alt="Wishlist"></a>
+                <a [routerLink]="[ '/path' ]"><span class="search-bar__link"><img src="assets/images/person_icon.svg"
                             alt="Sign Up/Log In"></span><span>Sign Up/Log In</span></a>
             </div>
         </div>

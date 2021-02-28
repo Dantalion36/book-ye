@@ -1,225 +1,43 @@
-@import '../../shared/styles/styles';
+<footer>
+    <div class="container">
+        <div class="footer__links">
 
-.burger-menu {
-    height: 60px;
-}
+            <div class="row">
+                <p><a class="nav__link" [routerLink]="[ '/about' ]">About Us</a></p>
+                <p><a class="nav__link" [routerLink]="[ '/path' ]">Site Rules</a></p>
+                <p><a class="nav__link" [routerLink]="[ '/path' ]">Return & Refund</a></p>
+                <p><a class="nav__link" [routerLink]="[ '/path' ]">Loyalty Programm</a></p>
+            </div>
+            <div class="row">
+                <p><a class="nav__link" [routerLink]="[ '/contacts' ]">Bookstores</a></p>
+                <p><a class="nav__link" [routerLink]="[ '/distribution' ]">Distribution</a></p>
+                <p><a class="nav__link" [routerLink]="[ '/path' ]">Feedback</a></p>
+                <p><a class="nav__link" [routerLink]="[ '/path' ]">Projects</a></p>
+            </div>
+            <div class="row">
+                <p><a class="nav__link" [routerLink]="[ '/path' ]">Calendar</a></p>
+                <p><a class="nav__link" [routerLink]="[ '/path' ]">Partners</a></p>
+                <p><a class="nav__link" [routerLink]="[ '/path' ]">Problems with Orders</a></p>
+                <p><a class="nav__link" [routerLink]="[ '/contacts' ]">Contacts</a></p>
+            </div>
+            <div class="row social-networks">
+                <p>Social Networks</p>
+                <div class="social-networks__icons">
+                    <a href="#"><img src="assets/images/youtube_icon.png" alt="Youtube Icon"></a>
+                    <a href="#"><img src="assets/images/facebook_icon.png" alt="Facebook Icon"></a>
+                    <a href="#"><img src="assets/images/telegram_icon.png" alt="Telegram Icon"></a>
+                    <a href="#"><img src="assets/images/Instagram_icon.png" alt="Instagram Icon"></a>
+                </div>
+                <div class="payment-logo">
+                    <img src="assets/images/privat24_logo.png" alt="PrivatBank Logo">
+                    <img src="assets/images/liqpay_logo.png" alt="LiqPay Logo">
+                    <img src="assets/images/mastercard_logo.png" alt="Mastercard Logo">
+                    <img src="assets/images/visa_logo.png" alt="Visa Logo">
+                </div>
+            </div>
 
-#menuToggle {
-    width: 200px;
-    display: block;
-    position: relative;
-    top: 20px;
-    left: 50px;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-    a {
-        text-decoration: none;
-        color: #232323;
-        transition: color 0.3s ease;
-        &:hover {
-            color: $crimson;
-        }
-    }
-    input {
-        display: block;
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        top: -7px;
-        left: -5px;
-        cursor: pointer;
-        opacity: 0;
-        z-index: 2;
-        -webkit-touch-callout: none;
-        &:checked ~ span {
-            opacity: 1;
-            transform: rotate(45deg) translate(-2px, -1px);
-            background: #232323;
-            &:nth-last-child(3) {
-                opacity: 0;
-                transform: rotate(0deg) scale(0.2, 0.2);
-            }
-            &:nth-last-child(2) {
-                transform: rotate(-45deg) translate(0, -1px);
-            }
-        }
-        &:checked ~ ul {
-          transform: none;
-        }
-    }
-    span
-        {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        background: #cdcdcd;
-        border-radius: 3px;
-        z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
-        &:first-child {
-            transform-origin: 0% 0%;
-        }
-        &:nth-last-child(2)
-        {
-            transform-origin: 0% 100%;
-        }
-    }
-}
+        </div>
 
-#menu
-{
-    position: absolute;
-    width: 100vw;
-    margin: -100px 0 0 -50px;
-    padding: 50px;
-    padding-top: 125px;
-    background: #ededed;
-    list-style-type: none;
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-    
-    li {
-        padding: 10px 0;
-        font-size: 22px;
-        text-align: center;
-    }
-}
-
-
-.bgr-nav {
-    background-color: $nav-bgr-color;
-}
-
-.navigation {
-    display: none;
-    
-    }
-
-.nav__link {
-    font-size: 16px;
-    color: $black;
-    text-decoration: none;
-        &:hover, &:active, &:focus{
-            text-decoration: none;
-            color: $red;
-        }
-}
-
-.bgr-search {
-    background-color: $red;
-}
-
-.search-bar  {
-background-color: $red;
-display: flex;
-justify-content: space-between;
-align-items: center;
-
-    .categories {
-        width: 148px;
-        height: 77px;
-        background-color: $crimson;
-        color: #fff;
-        border: none;
-
-    }
-
-    .search-bar__links {
-        display: flex;
-    }
-
-    .widescreen-search {
-        display: none;
-        position: relative;
-    }
-
-    .search-bar__btn {
-        position: absolute;
-        right: 13px;
-        border: none;
-        width: 44px;
-        height: 40px;
-    }
-
-    .popup-search {
-        position: absolute;
-        top: 54px;
-        display: flex;
-        align-items: center;
-        display: none;
-        width: 100%;
-        border: 2px solid $crimson;
-    }
-    
-    .search-bar__input {
-        height: 40px;
-        border: none;
-        border-radius: 4px;
-        margin: 0 10px 0 30px;
-    }
-
-    .search-bar__link {
-        position: relative;
-        display: inline-flex;
-        width: 34px;
-        height: 34px;
-        border: 1px solid $white;
-        border-radius: 50%;
-        justify-content: center;
-        align-items: center;
-        margin: 8px;
-    }
-
-    .basket-count {
-        width: 24px;
-        height: 24px;
-        bottom: 15px;
-        left: 20px;
-        position: absolute;
-        background-color: $white;
-        border-radius: 50%;
-    }
-    img {
-        color: $white;
-        width: 20px;
-        height: 20px;
-    }
-}
-
-@media (min-width: 768px) {
-    .burger-menu {
-        display: none;
-    }
-    .navigation {
-        display: flex;
-        height: 45px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        // text-align: center;
-        font-size: 16px;
-    }
-    .search-bar {
-        .widescreen-search {
-            display: flex;
-            align-items: center;
-            flex-grow: 1;
-            .search-bar__input {
-                flex-grow: 1;
-            }
-        }
-
-        .mobile-search {
-            display: none;
-        }
-
-        
-    }
-}
+        <p class="footer__copyright">©2021</p>
+    </div>
+</footer>

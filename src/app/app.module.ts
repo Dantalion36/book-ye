@@ -11,6 +11,9 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { CatalogueComponent } from './pages/catalogue/catalogue.component';
 import { DistributionComponent } from './pages/distribution/distribution.component';
 import { ProductComponent } from './pages/product/product.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminCategoriesComponent } from './admin/admin-categories/admin-categories.component';
+import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ProductComponent } from './pages/product/product.component';
     ContactsComponent,
     CatalogueComponent,
     DistributionComponent,
-    ProductComponent
+    ProductComponent,
+    AdminComponent,
+    AdminCategoriesComponent,
+    AdminProductsComponent
   ],
   imports: [
     BrowserModule,

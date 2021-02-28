@@ -1,5 +1,6 @@
-<div class="bgr-nav">
+<a class="admin" [routerLink]="[ '/admin' ]">Admin</a>
 
+<div class="bgr-nav">
     <nav role="navigation" class="burger-menu">
         <div id="menuToggle">
             <input type="checkbox">
@@ -25,9 +26,9 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
+    <div class="contain">
         <nav class="navigation">
-            <a class="nav__link" [routerLink]="[ '/home' ]">Home</a>
+            <a class="nav__link" [routerLink]="[ '/home' ]" routerLinkActive="active">Home</a>
             <a class="nav__link" [routerLink]="[ '/contacts' ]">Contacts</a>
             <a class="nav__link" [routerLink]="[ '/about' ]">About</a>
             <a class="nav__link" [routerLink]="[ '/blog' ]">Blog</a>
@@ -36,7 +37,7 @@
     </div>
 </div>
 <div class="bgr-search">
-    <div class="container">
+    <div class="contain">
         <div class="search-bar">
             <button class="categories">Categories<img src="assets/images/down_arrow.svg" alt="Down Arrow"></button>
             <form class="widescreen-search" action="">

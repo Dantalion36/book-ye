@@ -17,7 +17,7 @@ footer {
     padding-top: 50px;
 }
 
-.row {
+.info {
     flex: 100%;
     
 }
@@ -55,13 +55,13 @@ footer {
 }
 
 @media (min-width: 576px) {
-    .row {
+    .info {
         flex: 50%;
     }
 }
 
 @media (min-width: 768px) {
-    .row {
+    .info {
         flex: 33%;
         text-align: start;
     }
@@ -72,7 +72,7 @@ footer {
 }
 
 @media (min-width: 992px) {
-    .row {
+    .info {
         flex: 25%;
     }
 }

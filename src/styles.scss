@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+html, body { 
+    height: 100%;
+    line-height: 1.65; 
+}
+
+body {
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+button {
+    cursor: pointer;
+}
+
+.contain {
+    margin: 0 15px;
+}
+
+
+
+@media (min-width: 768px) {
+    .contain {
+        width: 720px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .contain {
+        width: 940px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contain {
+        width: 1140px;
+    }
+}

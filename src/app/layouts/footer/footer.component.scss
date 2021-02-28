@@ -1,0 +1,82 @@
+@import '../../shared/styles/styles';
+
+*{
+    color: $white;
+}
+
+footer {
+    background-color: $black;
+    text-align: center;
+}
+
+.footer__links {
+    display: flex;
+    line-height: 29.7px;
+    flex-wrap: wrap;
+    justify-content: center; 
+    padding-top: 50px;
+}
+
+.row {
+    flex: 100%;
+    
+}
+
+.nav__link {
+    font-size: 18px;
+    text-decoration: none;
+    &:hover, &:active, &:focus{
+        text-decoration: none;
+        color: $nav-link-red;
+    }
+}
+
+
+.social-networks  {
+    padding-top: 50px;
+    p {
+        font-size: 18px;
+    }
+    img {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+    }
+}
+
+.payment-logo img {
+   max-height: 1.2em;     
+   margin-top: 15px;
+}
+
+.footer__copyright {
+    text-align: center;
+    padding: 25px 0;
+}
+
+@media (min-width: 576px) {
+    .row {
+        flex: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .row {
+        flex: 33%;
+        text-align: start;
+    }
+    .social-networks {
+        padding-top: 0;
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .row {
+        flex: 25%;
+    }
+}
+
+@media (min-width: 1140px) {
+    
+}

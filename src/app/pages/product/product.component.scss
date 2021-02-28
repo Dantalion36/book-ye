@@ -1,0 +1,203 @@
+@import '../../shared/styles/styles';
+
+.main-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 34px;
+    >img {
+        width: 202px;
+    }
+    .preview-image-wrapper {
+        width: 101px;
+        padding-top: 10px;
+    }
+}
+
+.preview-item {
+    display: flex;
+    .preview-image-wrapper {
+        flex: 1;
+        text-align: center;
+        img {
+            width: 52px;
+        }
+        
+    }
+}
+
+.pricing {
+    margin-bottom: 34px;
+    background-color: $pale-grey;
+}
+
+.pricing__context {
+    padding: 20px 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .availability {
+        width: 100%;
+        text-align: start;
+        margin-bottom: 18px;
+    }
+    .price {
+        margin-bottom: 20px;
+    }
+    .buy {
+        width: 170px;
+        height: 47px;
+        margin-bottom: 23px;
+        
+    }
+}
+
+.pricing__footer {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.info {
+    padding: 20px;
+    width: 100%;
+}
+
+.info-navbar {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+        cursor: pointer;
+        li {
+            height: 58px;
+            width: 100%;
+            background-color: $product-info-navbar;
+            border: 1px solid $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.detailed-info {
+    padding: 32px 57px;
+    border: 1px solid $product-info-cont-brd;
+}
+
+#author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 200px;
+        height: 133px;
+        margin: 0 20px 15px 0;
+    }
+}
+
+#comments {
+    form {
+        background: url("../../../assets/images/feedback-bg.png") no-repeat $product-info-form-bg;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 30px 50px;
+    }
+    input {
+        height: 40px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+    textarea {
+        margin:25px 0 20px;
+        padding: 10px 20px;
+    }
+    input, textarea {
+        width: 100%;
+        border: 1px solid $product-info-form-brd;
+        border-radius: 5px;
+    }
+    .form-inputs {
+        width: 100%;
+    }
+    button {
+        width: 154px;
+        height: 35px;
+        background-color: $crimson;
+        border: none;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 500px) {
+    .info-navbar {
+        ul {  
+            li {
+                width: 50%;
+            }
+        }
+        
+    }
+}
+
+@media (min-width: 640px) {
+    .preview, .pricing {
+        flex: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    #author {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 992px) {
+    .preview {
+        flex: 1;
+    }
+    .pricing {
+        flex: 1;
+        order: 3;
+    }
+    .info {
+        flex: 2;
+        order: 2;
+    }
+    .info-navbar {
+        ul {
+            margin-bottom: 0;  
+            li {
+                width: 184px;
+            }
+        }  
+    }
+
+@media (min-width: 1200px) {
+    #comments {
+        form {
+            .form-inputs {
+                display: flex;
+                justify-content: start;
+                input {
+                    width: 307px;
+                    &[type="text"]{
+                        margin-right: 65px;
+                    }
+                }
+            }
+        }
+    }
+}
+}

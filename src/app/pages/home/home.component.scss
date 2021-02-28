@@ -1,0 +1,184 @@
+$red: rgb(198, 88, 88);
+$crimson: #bf0830;
+$white: rgb(255, 255, 255);
+$border-color: #eaeaea;
+$light-grey: #f6f4f0;
+$black-text: #252424;
+$subscribe-btn-col: #7f7f7f;
+$add-to-cart: #e0042f;
+
+.content {
+    background-color: $light-grey;
+}
+
+.content__head {
+    color: $crimson;
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $border-color;
+    a {
+        color: $crimson;
+        margin-right: 10px;
+    }
+    button {
+        background-color: $white;
+        height: 72px;
+        width: 72px;
+        border: none;
+        border-left: 1px solid $border-color;
+    }
+    .arrow {
+        height: 22px;
+        width: 22px;
+        border: solid $red;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+    .left {
+        transform: rotate(135deg);
+    }
+    .right {
+        transform: rotate(-45deg);
+    }
+}
+
+.content__products {
+    display: flex;
+    background-color: $white;
+    overflow: hidden;
+}
+
+.content__one-product {
+    flex: 1;
+    padding: 22px 15px 25px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border-color;
+    .product-name {
+        text-decoration: none;
+        // line-height: 1.1;
+    }
+    .comments {
+        text-align: center;
+    }
+    .rating {
+        display: flex;
+        justify-content: center;
+        max-height: 17px;
+        img {
+            padding: 0 2px;
+        }
+    }
+    .pricing {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        .add-to-cart {
+            border: 1px solid $add-to-cart;
+            align-self: center;
+            height: 38px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 6px 10px 8px;
+            text-decoration: none;
+            img {
+                height: 19px;
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+.short-info {
+    display: flex;
+    flex-wrap: wrap;
+    .short-info__item {
+        flex: 100%;
+        text-align: center;
+        padding: 25px 0 5px;
+    }
+    
+    .red {
+        background-color: $light-grey;
+        color: $crimson;
+    }
+    .black {
+        background-color: $white;
+        color: $black-text;
+    }
+}
+
+.subscription {
+    background-image: url("../../../assets/images/bg-book.jpg");
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .subscription__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .subscription__info__elem {
+            width: 241px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .image-wrapper {
+        width: 56px;
+        height: 56px;
+        background-color: $crimson;
+        border-radius: 50%;
+    }
+
+    
+    input {
+        display: block;
+        width: 280px;
+        height: 35px;
+        padding: 0 27px;
+        margin-bottom: 25px;
+        border: none;
+    }
+
+    .subscribe-button {
+        color: $white;
+        background-color: $subscribe-btn-col;
+        
+    }
+}
+
+
+
+@media (min-width: 576px) {
+    .subscription {
+        .subscription__info {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .short-info {
+        .short-info__item {
+            flex: 50%;
+        }
+    }
+    
+}
+@media (min-width: 992px) {
+    .short-info {
+        .short-info__item {
+            flex: 25%;
+        }
+    }
+}

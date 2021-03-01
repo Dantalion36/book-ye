@@ -1,6 +1,7 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { IProducts } from 'src/app/shared/interfaces/products.interface';
+import { Component, OnInit} from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { ICategory } from 'src/app/shared/interfaces/category.interface';
+import { IProduct } from 'src/app/shared/interfaces/product.interface';
 
 @Component({
   selector: 'app-admin-products',
@@ -8,19 +9,21 @@ import { IProducts } from 'src/app/shared/interfaces/products.interface';
   styleUrls: ['./admin-products.component.scss']
 })
 export class AdminProductsComponent implements OnInit {
-  adminProducts: Array<IProducts> = [];
-  modalRef: BsModalRef;
-  constructor(private modalService: BsModalService) { }
+  adminCategories: Array<ICategory>;
+  adminProducts: Array<IProduct> = [];
+  prodName: string;
+  prodURL: string;
+  prodImage: string;
+  upload: any;
+  constructor(private afStorage: AngularFireStorage) { }
 
   ngOnInit(): void {
   }
 
-  private getProducts(): void {
-    
-  } 
-
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+  uploadFile(event): void {
+    const file = event.target.files[0];
+    const filePath = `images/${file.name}`;
+    this.upload = this.afStorage.upload(filePath, file);
   }
 
 }

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "book-ye": {
+      "hosting": {
+        "book-ye": [
+          "book-ye"
+        ]
+      }
+    }
+  }
+}

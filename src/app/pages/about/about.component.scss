@@ -1,0 +1,13 @@
+@import '../../shared/styles/styles';
+
+img {
+    float: left;
+    margin: 0 40px 20px 0;
+    max-height: 256px;
+    max-width: 100%;
+}
+
+p, pre {
+    margin-bottom: 20px;
+    color: $grey-text;
+}

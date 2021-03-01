@@ -1,1 +1,73 @@
-<p>admin-categories works!</p>
+<p>admin-discounts works!</p>
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Create category</button>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">URL</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cat of adminCategories">
+            <td>{{ cat.id }}</td>
+            <td>{{ cat.name }}</td>
+            <td>{{ cat.urlName }}</td>
+            <td>
+                <button class="btn btn-warning" (click)="openEditModal(editTemplate, cat)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteCategory(cat)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="catName">Title</label>
+                <input [(ngModel)]="catName" name="catName" type="text" class="form-control" id="catName">
+            </div>
+            <div class="form-group">
+                <label for="catURLName">URL Name</label>
+                <input [(ngModel)]="catURLName" name="catURLName" type="text" class="form-control" id="catURLName">
+            </div>
+            <button *ngIf="!editStatus" (click)="addCategory()" type="button" class="btn btn-success">Add</button>
+            <button *ngIf="editStatus" type="button" class="btn btn-info">Save</button>
+        </form>
+    </div>
+</ng-template>
+
+
+<ng-template #editTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="catName">Title</label>
+                <input [(ngModel)]="catName" name="catName" type="text" class="form-control" id="catName">
+            </div>
+            <div class="form-group">
+                <label for="catURLName">URL Name</label>
+                <input [(ngModel)]="catURLName" name="catURLName" type="text" class="form-control" id="catURLName">
+            </div>
+            <button type="button" class="btn btn-info" (click)="updateCategory()">Save</button>
+        </form>
+    </div>
+</ng-template>

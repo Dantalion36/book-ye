@@ -1,1 +1,69 @@
-<p>admin-products works!</p>
+<form>
+    <div class="form-group mb-3">
+        <select class="custom-select" [(ngModel)]="currentCategory" name="currentCategory">
+            <option [ngValue]="cat" *ngFor="let cat of adminCategories">{{cat.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="prodName">Title</label>
+        <input [(ngModel)]="prodName" name="prodName" type="text" class="form-control" id="prodName">
+    </div>
+    <div class="form-group">
+        <label for="prodURLName">URL Name</label>
+        <input [(ngModel)]="prodURLName" name="prodURLName" type="text" class="form-control" id="prodURLName">
+    </div>
+    <div class="form-group">
+        <label for="prodDescription">Description</label>
+        <textarea class="form-control" [(ngModel)]="prodDescription" name="prodDescription" id="prodDescription"
+            cols="30" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="prodWeight">Weight</label>
+        <input [(ngModel)]="prodWeight" name="prodWeight" type="text" class="form-control" id="prodWeight">
+    </div>
+    <div class="form-group">
+        <label for="prodPrice">Price</label>
+        <input [(ngModel)]="prodPrice" name="prodPrice" type="number" class="form-control" id="prodPrice">
+    </div>
+    <div class="form-group">
+        <div class="custom-file mb-3">
+            <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="prodImage">
+            <label class="custom-file-label" for="prodImage">Choose file...</label>
+        </div>
+    </div>
+    <div class="progress mt-3 mb-3" *ngIf="!uploadStatus">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+            [style.width]="(uploadProgress | async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="form-group" *ngIf="uploadStatus">
+        <img [src]="prodImage" alt="" width="200px">
+        <button (click)="deleteImage()" type="button" class="btn btn-danger">delete</button>
+    </div>
+    <button type="button" (click)="addProduct()" class="btn btn-success">Add</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Category</th>
+            <th scope="col">Title</th>
+            <th scope="col">URL</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of adminProducts">
+            <td>{{ prod.id }}</td>
+            <td>{{ prod.category.name }}</td>
+            <td>{{ prod.name }}</td>
+            <td>{{ prod.urlName }}</td>
+            <td>
+                <button class="btn btn-warning">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteProduct(prod)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

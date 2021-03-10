@@ -1,0 +1,72 @@
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Create filter</button>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Section</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fltr of adminFilters">
+            <td>{{ fltr.id }}</td>
+            <td>{{ fltr.name }}</td>
+            <td>{{ fltr.section }}</td>
+            <td>
+                <button class="btn btn-warning" (click)="openEditModal(editTemplate, fltr)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteFilter(fltr)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="fltrName">Name</label>
+                <input [(ngModel)]="fltrName" name="fltrName" type="text" class="form-control" id="fltrName">
+            </div>
+            <div class="form-group">
+                <label for="fltrSection">Section</label>
+                <input [(ngModel)]="fltrSection" name="fltrSection" type="text" class="form-control" id="fltrSection">
+            </div>
+            <button *ngIf="!editStatus" (click)="addFilter()" type="button" class="btn btn-success">Add</button>
+            <button *ngIf="editStatus" type="button" class="btn btn-info">Save</button>
+        </form>
+    </div>
+</ng-template>
+
+
+<ng-template #editTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="fltrName">Title</label>
+                <input [(ngModel)]="fltrName" name="fltrName" type="text" class="form-control" id="fltrName">
+            </div>
+            <div class="form-group">
+                <label for="fltrSection">Section</label>
+                <input [(ngModel)]="fltrSection" name="fltrSection" type="text" class="form-control" id="fltrSection">
+            </div>
+            <button type="button" class="btn btn-info" (click)="updateFilter()">Save</button>
+        </form>
+    </div>
+</ng-template>

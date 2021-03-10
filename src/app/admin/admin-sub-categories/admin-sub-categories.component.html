@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" (click)="openModal(template)">Create category</button>
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Create sub-category</button>
 <hr>
 <table class="table">
     <thead>
@@ -6,20 +6,22 @@
             <th scope="col">ID</th>
             <th scope="col">Title</th>
             <th scope="col">URL</th>
+            <th scope="col">Sub-category of</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let cat of adminCategories">
+        <tr *ngFor="let cat of adminSubCategories">
             <td>{{ cat.id }}</td>
             <td>{{ cat.name }}</td>
             <td>{{ cat.urlName }}</td>
+            <td>{{ cat.parentCategory.name }}</td>
             <td>
                 <button class="btn btn-warning" (click)="openEditModal(editTemplate, cat)">Edit</button>
             </td>
             <td>
-                <button class="btn btn-danger" (click)="deleteCategory(cat)">Delete</button>
+                <button class="btn btn-danger" (click)="deleteSubCategory(cat)">Delete</button>
             </td>
         </tr>
     </tbody>
@@ -35,19 +37,19 @@
     <div class="modal-body">
         <form>
             <div class="form-group mb-3">
-                <select class="custom-select" [(ngModel)]="catParrent" name="catParrent">
+                <select class="custom-select" [(ngModel)]="subCatParent" name="subCatParent">
                     <option [ngValue]="cat" *ngFor="let cat of adminCategories">{{cat.name}}</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="catName">Title</label>
-                <input [(ngModel)]="catName" name="catName" type="text" class="form-control" id="catName">
+                <label for="subCatName">Title</label>
+                <input [(ngModel)]="subCatName" name="subCatName" type="text" class="form-control" id="subCatName">
             </div>
             <div class="form-group">
-                <label for="catURLName">URL Name</label>
-                <input [(ngModel)]="catURLName" name="catURLName" type="text" class="form-control" id="catURLName">
+                <label for="subCatURLName">URL Name</label>
+                <input [(ngModel)]="subCatURLName" name="subCatURLName" type="text" class="form-control" id="subCatURLName">
             </div>
-            <button *ngIf="!editStatus" (click)="addCategory()" type="button" class="btn btn-success">Add</button>
+            <button *ngIf="!editStatus" (click)="addSubCategory()" type="button" class="btn btn-success">Add</button>
             <button *ngIf="editStatus" type="button" class="btn btn-info">Save</button>
         </form>
     </div>
@@ -64,14 +66,19 @@
     <div class="modal-body">
         <form>
             <div class="form-group">
-                <label for="catName">Title</label>
-                <input [(ngModel)]="catName" name="catName" type="text" class="form-control" id="catName">
+                <label for="subCatName">Title</label>
+                <input [(ngModel)]="subCatName" name="subCatName" type="text" class="form-control" id="subCatName">
             </div>
             <div class="form-group">
-                <label for="catURLName">URL Name</label>
-                <input [(ngModel)]="catURLName" name="catURLName" type="text" class="form-control" id="catURLName">
+                <div class="form-group mb-3">
+                    <select class="custom-select" [(ngModel)]="subCatParent" name="subCatParent">
+                        <option [ngValue]="cat" *ngFor="let cat of adminCategories">{{cat.name}}</option>
+                    </select>
+                </div>
+                <label for="subCatURLName">URL Name</label>
+                <input [(ngModel)]="subCatURLName" name="subCatURLName" type="text" class="form-control" id="subCatURLName">
             </div>
-            <button type="button" class="btn btn-info" (click)="updateCategory()">Save</button>
+            <button type="button" class="btn btn-info" (click)="updateSubCategory()">Save</button>
         </form>
     </div>
 </ng-template>

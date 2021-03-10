@@ -3,9 +3,11 @@ $nav-link-red: rgb(248, 71, 110);
 $crimson: #bf0830;
 $white: rgb(255, 255, 255);
 $nav-bgr-color: #f5f4f0;
+$border-color: #eaeaea;
 $black: #000;
 $white: #fff;
 $pale-grey: #f6f4f0;
+$black-text: #252424;
 $product-info-navbar: #ee8b8b;
 $product-info-cont-brd: #eaeaea;
 $product-info-form-brd: #f5f0f0;
@@ -13,3 +15,57 @@ $product-info-form-bg: #f7e8e8;
 $catalogue-parameters-bg: #df032d;
 $catalogue-navbar-bg: #e25757;
 $grey-text: #656464;
+$subscribe-btn-col: #7f7f7f;
+$add-to-cart: #e0042f;
+
+@mixin one-product($flex: 1) {
+    .content__one-product {
+        @if flex != 1 {
+            width: 25%;
+        }
+        @else {
+            flex: $flex;
+        }
+        padding: 22px 15px 25px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $border-color;
+        img {
+            max-width: 100%;
+        }
+        .product-name {
+            text-decoration: none;
+            // line-height: 1.1;
+        }
+        .comments {
+            text-align: center;
+        }
+        .rating {
+            display: flex;
+            justify-content: center;
+            max-height: 17px;
+            img {
+                padding: 0 2px;
+            }
+        }
+        .pricing {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            .add-to-cart {
+                border: 1px solid $add-to-cart;
+                align-self: center;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 6px 10px 8px;
+                text-decoration: none;
+                img {
+                    height: 19px;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}

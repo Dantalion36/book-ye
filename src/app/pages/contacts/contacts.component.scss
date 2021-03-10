@@ -1,0 +1,50 @@
+@import '../../shared/styles/styles';
+
+h2 {
+    padding: 15px 0 35px;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        padding: 5px 55px 5px 10px;
+    }
+}
+
+.gen-contact-info {
+    padding: 45px 0 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.shop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    padding: 25px 65px 25px 0;
+    border-top: 2px solid $border-color;
+    .shop__info, .shop__adress, .shop__worktime {
+        margin-bottom: 15px;
+    }
+    .shop__worktime {
+        display: flex;
+        flex-wrap: wrap;
+        .shop__tel, .shop__time {
+            padding-right: 10px;
+        }
+    }
+    .shop__image {
+        height: 150px;
+    }
+
+    @media (max-width: 670px) {
+        .shop__image {
+            margin: 0 auto;
+        }   
+    }
+}
+
+
